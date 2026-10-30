@@ -1,6 +1,6 @@
 = Ipsum
 
-#lorem(60)
+#lorem(60)@bratkova2008metody
 
 == Dolor sit amet
 #lorem(45)

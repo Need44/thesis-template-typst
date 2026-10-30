@@ -37,3 +37,19 @@
 #include "chapters/ipsum.typ" 
 #include "chapters/lorem.typ"
 #include "chapters/conclusion.typ"
+
+#bibliography(
+  "bibliography.bib",
+  title: "Seznam použité literatury")
+#pagebreak()
+
+#outline(
+  title: [Seznam obrázků],
+  target: figure.where(kind: image)
+)
+#pagebreak()
+#outline(
+  title: [Seznam kódu],
+  target: figure.where(kind: "code")
+)
+#pagebreak()
