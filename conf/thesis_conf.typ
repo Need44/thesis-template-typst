@@ -2,6 +2,8 @@
 #import "declaration_of_originality.typ": originality_sign
 #import "acknowledgements.typ": gratitude
 #import "abstract.typ": abstract
+#import "conclusion.typ": conclusion
+#import "ai.typ": ai
 #import "helpers.typ": *
 
 #let show-numbers = state("show-numbers", false)
@@ -82,6 +84,9 @@
   abstract(vars)
   tableofcontents()
   doc
+  conclusion()
+  ai()
+
 }
 
 
