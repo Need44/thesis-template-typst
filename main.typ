@@ -36,3 +36,4 @@
 #include "chapters/Introduction.typ"
 #include "chapters/ipsum.typ" 
 #include "chapters/lorem.typ"
+#include "chapters/conclusion.typ"

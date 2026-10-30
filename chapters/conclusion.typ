@@ -1,11 +1,10 @@
 //File for writing conclusion
-#let conclusion() = {
-heading(
+#heading(
     bookmarked: false,
     outlined: false,
     numbering: none,
   )[Závěr]
-  [Text závěru]
+  
+Text závěru
 
-  pagebreak()
-}
+#pagebreak()
