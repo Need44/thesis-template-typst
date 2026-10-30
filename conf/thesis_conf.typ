@@ -4,6 +4,7 @@
 #import "abstract.typ": abstract
 #import "helpers.typ": *
 
+#let show-numbers = state("show-numbers", false)
 
 //Template function, sets all the setting for the document
 #let template_conf(
@@ -29,7 +30,11 @@
         left:30mm,
         right:25mm,
       ),
-      numbering: "1",
+      numbering: (n, ..) => {
+          context if show-numbers.at(here()) {
+            numbering("1", n)
+    }
+           },
       number-align: center,
     )
     set text(
@@ -63,7 +68,7 @@
       }
       else {}
     }
-    [#it #v(0.5em)]
+    [#v(1em) #it #v(0.5em)]
   }
 
   let tableofcontents() = {     
