@@ -28,3 +28,6 @@
 
 //Calling template function to apply to document, will accept vars as argument
 #show: template_conf.with()
+
+#include "chapters/ipsum.typ" 
+#include "chapters/lorem.typ"

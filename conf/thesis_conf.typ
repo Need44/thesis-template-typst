@@ -41,8 +41,31 @@
       lang: "cs",
     )
     set par(
-      justify: true
+      justify: true,
+      leading: 1.5em,
+      spacing: 5mm,
+
     )
+    set heading(
+      numbering: "1.1.1"
+    )
+
+//This adds more spacing after heading, this is used for cleaner look of the text
+//Found at https://forum.typst.app/t/how-to-add-spacing-around-headings-but-not-between-headings/5967
+    show heading: it => {
+    // Clever trick to reduce spacing between consecutive headings
+    // See https://github.com/typst/typst/issues/2953
+    let previous_headings = query(selector(heading).before(here(), inclusive: false))
+    if previous_headings.len() > 0 {
+      let prev_loc = previous_headings.last().location().position()
+      let it_loc = it.location().position()
+      if (it_loc.page == prev_loc.page and it_loc.x == prev_loc.x and it_loc.y - prev_loc.y < 60pt) { // threshold
+        v(-1.5em) // amount to reduce spacing, could make this dependent on it.level
+      }
+      else {}
+    }
+    [#it #v(0.5em)]
+  }
 
     //Title page of thesis
     show title: set align(center + horizon)
@@ -79,13 +102,10 @@
       #v(1fr)
       
         $"Vedoucí bakalářské práce:" & #vars.Supervisor \
-        \
         "Studijní program:" & #vars.StudyPrograme \ 
-        \
         "Studijní obor:" & #vars.StudyField$ 
 
         #v(1fr)
-      //]
 
       Praha #vars.Year
     ])
@@ -99,24 +119,69 @@
         v(10mm)
         [Praha, #vars.Date #vars.Year #h(0.5fr) Podpis autora #h(1fr)]
         v(20mm)
+        pagebreak()
+    }
 
-      //Acknowledgements, thanks to others
-      let gratitude() = {
+    //Acknowledgements, thanks to others
+    let gratitude() = {
+      [Poděkování]
 
-      }
+      v(20mm)
+      pagebreak()
+    }
 
       //Abstract of thesis
-      let abstract() = {
+    let abstract() = {
+        Large[*Abstrakt*]
+        parbreak()
 
+        [Text abstraktu v češtině]
+        v(4mm)
+
+        Large[*Klíčová slova* \ ]
+        parbreak()
+
+        //Doporučeno 3-5 klíčových slov
+        [Klíčová, slova, oddělená, čárkou]
+
+        pagebreak()
+
+        Large[*Abstract*]
+        parbreak()
+
+        [Abstract in english]
+        v(4mm)
+
+        Large[*Keywords*]
+        parbreak()
+
+        //3-5 key words recommended
+        [Key, words, separated, by, commas]
+
+        pagebreak()
       }
 
-      //Start of main text
-      let intro() = {
-
-      }
+    let tableofcontents() = {     
+      outline()
+      pagebreak()
     }
+      //Start of main text
+    let intro() = {
+        heading(
+          bookmarked: true,
+          outlined: true,
+          numbering: none,
+        )[Úvod]
+        
+
+        pagebreak()
+      }
 
     title()
     originality_sign()
+    abstract()
+    tableofcontents()
+    intro()
 
+    doc
   }
