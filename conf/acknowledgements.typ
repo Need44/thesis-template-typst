@@ -2,7 +2,9 @@
 
 //Acknowledgements, thanks to others
 #let gratitude(vars) = {
-  [Poděkování]
+  align(bottom)[
+    Poděkování
+    ]
 
   v(20mm)
   pagebreak()

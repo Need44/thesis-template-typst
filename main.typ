@@ -3,39 +3,26 @@
 
 //Part of the template, fill with your data and credentials
 #let vars = (
-    Title: "",
-    TitleEN: "",
-    Author: "",
-    StudyPrograme: "",
-    StudyField: "",
-    Department: "",
-    Supervisor: "",
-    Year: "",
-    Date: "",
-  );
-
-//Testing variable
-#let vars2 = (
-    Title: "Umistovani prvku na strance",
-    TitleEN: "Arranging elements on the page",
-    Author: "Jan Novak",
-    StudyPrograme: "Informatika v zurnalistice",
-    StudyField: "Webove stranky a jejich sprava",
-    Department: "Katedra internetove zurnalistiky",
-    Supervisor: "PhDr. Carodej Dobrodej, LLM",
-    Year: "2026",
-    Date: "30. rijna",
+    Title: "Název práce v češtině",
+    TitleEN: "Title of the thesis in english",
+    Author: "Autor práce",
+    StudyPrograme: "Studijní program",
+    StudyField: "Studijní obor",
+    Department: "Název katedry",
+    Supervisor: "Vedoucí práce včetně titulů",
+    Year: "Rok odevzdání",
+    Date: "Datum odevzdání",
   );
 
 //Calling template function to apply to document, will accept vars as argument
-#show: template_conf.with()
+#show: template_conf.with(vars: vars)
 
 //This switches page numbering on
 #show-numbers.update(true) 
 
 #include "chapters/Introduction.typ"
-#include "chapters/ipsum.typ" 
 #include "chapters/lorem.typ"
+#include "chapters/ipsum.typ" 
 #include "chapters/conclusion.typ"
 
 #bibliography(
