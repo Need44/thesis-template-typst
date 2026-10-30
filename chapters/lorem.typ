@@ -1,5 +1,5 @@
 = Lorem
 
-#lorem(300)
+#lorem(250)
 
 #pagebreak()

@@ -1,4 +1,5 @@
 #import "conf/thesis_conf.typ": template_conf
+#import "conf/helpers.typ": *
 
 //Part of the template, fill with your data and credentials
 #let vars = (
@@ -29,5 +30,6 @@
 //Calling template function to apply to document, will accept vars as argument
 #show: template_conf.with()
 
+#include "chapters/Introduction.typ" 
 #include "chapters/ipsum.typ" 
 #include "chapters/lorem.typ"
