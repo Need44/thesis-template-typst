@@ -31,12 +31,16 @@
         left:30mm,
         right:25mm,
       ),
-      numbering: (n, ..) => {
-          context if show-numbers.at(here()) {
-            numbering("1", n)
-    }
-           },
+      numbering: "1",
       number-align: center,
+      footer: context {
+        if show-numbers
+        .at(here()){
+          align(center, counter(page).display("1"))
+        } else {
+          none
+        }
+      },
     )
     set text(
       font: "New Computer Modern",
