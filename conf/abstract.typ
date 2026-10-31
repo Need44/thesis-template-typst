@@ -12,7 +12,7 @@
   parbreak()
 
   //Doporučeno 3-5 klíčových slov
-  [Klíčová, slova, oddělená, čárkou]
+  vars.Keywords
 
   pagebreak()
 
@@ -26,7 +26,7 @@
   parbreak()
 
   //3-5 key words recommended
-  [Key, words, separated, by, commas]
+  vars.KeywordsEN
 
   pagebreak()
   }

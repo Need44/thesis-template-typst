@@ -10,8 +10,12 @@
     StudyField: "Studijní obor",
     Department: "Název katedry",
     Supervisor: "Vedoucí práce včetně titulů",
-    Year: "Rok odevzdání",
-    Date: "Datum odevzdání",
+    //Rok odevzdání, načte se automaticky při kompilaci
+    Year: datetime.today().display("[year]"),
+    //Datum odevzdání, načte se automaticky při kompilaci
+    Date: datetime.today().display("[day] [month repr:long]"),
+    Keywords: "Klíčová, slova, oddělená, čárkou",
+    KeywordsEN: "Key, words, separated, by, commas",
   );
 
 //Calling template function to apply to document, will accept vars as argument

@@ -17,11 +17,14 @@
     StudyField: "Studijní obor",
     Department: "Název katedry",
     Supervisor: "Vedoucí práce včetně titulů",
-    Year: "Rok odevzdání",
-    Date: "Datum odevzdání",
+    Year: datetime.today().display("[year]"),
+    Date: datetime.today().display("[day] [month repr:long]"),
+    Keywords: "Klíčová, slova, oddělená, čárkou",
+    KeywordsEN: "Key, words, separated, by, commas",
   ),
   doc,
   ) = {
+    set document(title: vars.Title, author: vars.Author, keywords: vars.Keywords,)
 
     set page(
       paper: "a4",
