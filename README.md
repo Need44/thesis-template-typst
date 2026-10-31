@@ -7,9 +7,13 @@ This is a template for the Typst typesetting system for a bachelor's thesis at t
 - [Typst compiler][typstrepo]
 - Text editor (recommended VSCode or [VSCodium][VSCodiumwww] with Tinymist Typst extension)
 
-## Building and exporting the PDF
+## Compiling into PDF
 
-- `TBD`
+**Ensure you are in a root(where main.typ is) and then run:**
+
+```bash
+  typst compile -f pdf --pretty --pdf-standard a-2u main.typ thesis.pdf
+```
 
 ## Resources
 
