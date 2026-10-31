@@ -7,6 +7,15 @@ This is a template for the Typst typesetting system for a bachelor's thesis at t
 - [Typst compiler][typstrepo]
 - Text editor (recommended VSCode or [VSCodium][VSCodiumwww] with Tinymist Typst extension)
 
+## Structure
+
+|Folder               | Description                                                                                                                                   |
+|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| `.`                 | Root folder with main file (main.typ). This file is used as compilation target and all other Typst files are imported/included here           |
+| `chapters`          | This folder is for dividing each chapter into individual files and writing text without much stylization as this is done by template files    |
+| `conf`              | Here are located all template configuration files and premade pages which only need to be filled with data(text or words)                     |
+| `src`               | This is reserved for media files or other  non-Typst files that will be included in thesis                                                    |
+
 ## Compiling into PDF
 
 **Ensure you are in a root(where main.typ is) and then run:**
