@@ -58,6 +58,7 @@
       spacing: 5mm,
 
     )
+    show footnote.entry: set text(size: 10pt)
     set heading(
       numbering: "1.1.1"
     )
