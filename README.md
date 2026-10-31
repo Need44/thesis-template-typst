@@ -18,7 +18,7 @@ This is a template for the Typst typesetting system for a bachelor's thesis at t
 
 ## Compiling into PDF
 
-**Ensure you are in a root(where main.typ is) and then run:**
+**Ensure you are in a project root directory(where main.typ is) and then run:**
 
 ```bash
   typst compile -f pdf --pretty --pdf-standard a-2u main.typ thesis.pdf
