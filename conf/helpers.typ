@@ -9,7 +9,7 @@
 //Helper function that translates and formates long month notation into czech language
 
 #let datetime_today_translated() = {
-  let months-in-czech = ("ledna", "února", "března", "dubna", "května", "června", "července", "srpna", "září", "listopadu", "prosince")
+  let months-in-czech = ("ledna", "února", "března", "dubna", "května", "června", "července", "srpna", "září", "října", "listopadu", "prosince")
 
   let translated-month(dt_month) = months-in-czech.at(dt_month.month() - 1)
 
